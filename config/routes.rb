@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   # Example resource route with sub-resources:
   #   resources :products do
-  #     resources :comments, :sales
+  #     resouprces :comments, :sales
   #     resource :seller
   #   end
 
@@ -54,5 +54,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-get '/users/'
+# get 'user/home'
+root 'users#home'
+
 end

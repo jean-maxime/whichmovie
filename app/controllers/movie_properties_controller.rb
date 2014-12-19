@@ -1,0 +1,2 @@
+class MoviePropertiesController < ApplicationController
+end

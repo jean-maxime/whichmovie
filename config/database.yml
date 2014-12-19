@@ -35,12 +35,12 @@ test:
   adapter: mysql2
   database: library_test
   username: root
-  password: [password]
+  password:
   host: localhost
 
 production:
   adapter: mysql2
   database: library_production
   username: root
-  password: [password]
+  password: 
   host: localhost
