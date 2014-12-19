@@ -1,0 +1,12 @@
+<%= form_tag("/movies", method: "get") do %>
+<%= label_tag(:search, "Rechercher un film :") %>
+<%= text_field_tag(:search) %>
+<%= submit_tag("Search") %>
+<% end %>
+
+<% if params[:search].present? %>
+<%	 @resul.each do |task| %>
+<% puts "description:#{task.description}\nid:#{task.id}\nstate:#{task.state}\n"%>
+<% endt %>
+
+<% end %>

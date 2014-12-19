@@ -30,6 +30,7 @@ gem 'spring',        group: :development
 #Gem devise see : https://github.com/plataformatec/devise
 gem 'devise'
 #
+gem 'themoviedb'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,4 +43,3 @@ gem 'devise'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
