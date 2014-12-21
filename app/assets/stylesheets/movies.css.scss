@@ -1,3 +1,25 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.result_search_container{
+	text-align:center;
+}
+
+.result_search{
+	background-color:#F0F0F0;
+	width:300px;
+	display:inline-block;
+	text-align:center;
+	margin: 5px;
+	border: solid 1px #EBEBEB;
+}
+
+.result_search img{
+	display:block;
+	margin: 0 auto;
+}
+
+#form_search{
+	text-align:center;
+	margin: 10px;
+}

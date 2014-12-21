@@ -1,12 +1,21 @@
-<%= form_tag("/movies", method: "get") do %>
-<%= label_tag(:search, "Rechercher un film :") %>
-<%= text_field_tag(:search) %>
-<%= submit_tag("Search") %>
+<%= form_tag("/movies", method: "get", id: "form_search") do %>
+	<%= label_tag(:search, "Rechercher un film :") %>
+	<%= text_field_tag(:search) %>
+	<%= submit_tag("Search") %>
 <% end %>
 
-<% if params[:search].present? %>
-<%	 @resul.each do |task| %>
-<% puts "description:#{task.description}\nid:#{task.id}\nstate:#{task.state}\n"%>
-<% endt %>
 
+<% if params[:search].present? %>
+	<div id="result_search_container">
+		<%  @result.each do |task| %>
+			<div class="result_search">
+				<p><%= task.title %><p>
+				<% if !task.poster_path.nil? %>
+					<%= image_tag "https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title %>
+				<% else %>
+					<%= image_tag 'unknow.jpg', alt: "unknonw" %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
 <% end %>
