@@ -3,14 +3,16 @@
 <head>
   <title>HeticRor</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- Google font -->
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <!-- end Google font -->
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 <header>
-	<span class="text_left">
-		<%=  "Welcome in our new search movie application" %>
-	</span>
 
 	<span class="profil">
 		<% if user_signed_in? %>
@@ -22,10 +24,12 @@
 			<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 		<% end %>
 	</span>
+  <span id="title">
+    <h1><%=  "Welcome in our new search movie application" %></h1>
+  </span>
+
 </header>
-
-<%= yield %>
-
+  <%= yield %>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -36,7 +40,7 @@
 
 
 <footer>
-  <p>HETIC 2014</p>
+  <p>HETIC 2014 - Jean-Maxime / Kirgan </p>
 </footer>
 </body>
 </html>
