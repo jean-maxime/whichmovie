@@ -1,10 +1,10 @@
 <%= form_tag("/movies", method: "get", id: "form_search") do %>
-	<%= label_tag(:search, "Rechercher un film :") %>
-	<%= text_field_tag(:search) %>
-	<%= submit_tag("Search") %>
+	<!-- <%= label_tag(:search, "Rechercher un film :") %> -->
+	<%= text_field_tag(:search, nil, placeholder: 'Which film are you looking for ? e.g. : Batman, Lord of the ring...') %>
+	<% submit_tag("Search", :id => "submit") %>
 <% end %>
 
-
+<div id="wrapper">
 <% if params[:search].present? %>
 	<div id="result_search_container">
 		<%  @result.each do |task| %>
@@ -19,3 +19,4 @@
 		<% end %>
 	</div>
 <% end %>
+</div>
