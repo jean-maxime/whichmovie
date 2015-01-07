@@ -1,8 +1,7 @@
-<%= form_tag("/movies", method: "get", id: "form_search") do %>
-	<!-- <%= label_tag(:search, "Rechercher un film :") %> -->
-	<%= text_field_tag(:search, nil, placeholder: 'Which film are you looking for ? e.g. : Batman, Lord of the ring...') %>
-	<% submit_tag("Search", :id => "submit") %>
-<% end %>
+<%= form_tag("/movies", method: "get", id: "form_search") do %><!--
+--><div><%= text_field_tag(:search, nil, placeholder: 'Which film are you looking for ? e.g. : Batman, Lord of the ring...') %><!--
+--><%= submit_tag("Search", :id => "submit", :class =>"color-transition") %></div><!--
+--><% end %>
 
 <div id="wrapper">
 <% if params[:search].present? %>
@@ -15,6 +14,7 @@
 				<% else %>
 					<%= image_tag 'unknow.jpg', alt: "unknonw" %>
 				<% end %>
+				<div class="choice"><span class="wish">X</span><span class="viewed">S</span></div>
 			</div>
 		<% end %>
 	</div>
