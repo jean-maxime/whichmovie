@@ -25,18 +25,21 @@
 		<% end %>
 	</span>
   <span id="title">
-    <h1><%=  "Welcome in our new search movie application" %></h1>
+    <h1><%= link_to "Welcome in our new search movie application", '/movies'%></h1>
   </span>
 
 </header>
+<div id="container">
   <%= yield %>
-<% if notice %>
+</div>
+
+<!--<% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-<p class="navbar-text pull-right">
+<p class="navbar-text pull-right"></p>-->
 
 
 <footer>
