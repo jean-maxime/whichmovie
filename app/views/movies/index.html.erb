@@ -1,6 +1,6 @@
 <div id="form_search">
 <%= form_tag("/movies", method: "get", id: "form_search") do %><!--
---><div><%= text_field_tag(:search, nil, placeholder: 'Which film are you looking for ? e.g. : Batman, Lord of the ring...') %><!--
+--><div><%= text_field_tag(:search, nil, placeholder: 'Which film are you looking for ? e.g. : Batman, Lord of the ring...', value: params[:search]) %><!--
 --><%= submit_tag("Search", :id => "submit") %></div><!--
 --><% end %>
 </div>
@@ -11,9 +11,9 @@
 			<div class="result_search">
 				<p><%= task.title %><p>
 				<% if !task.poster_path.nil? %>
-					<%= image_tag "https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title %>
+					<%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title), {:action => 'index', :controller => 'description', :id => task.id}  %>
 				<% else %>
-					<%= image_tag 'unknow.jpg', alt: "unknonw" %>
+					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'index', :controller => 'description', :id => task.id} %>
 				<% end %>
 				<div class="choice"><span class="wish">X</span><span class="viewed">S</span></div>
 			</div>

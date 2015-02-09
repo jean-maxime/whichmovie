@@ -1,0 +1,20 @@
+<div id="description_film">
+	<div class="video">
+		<h3><%= @result.title %></h3>
+		<p><%= @result.overview %></p>
+		<% if @trailers.present? %>
+		<h2>Trailer</h2>
+		<% @trailers.each do |task| %>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= task.source %>" frameborder="0" allowfullscreen></iframe>
+			<% break %>
+		<% end %>
+		<% elsif @result.poster_path.present? %>
+			<h2>Image</h2>
+			<%= image_tag "https://image.tmdb.org/t/p/w185/"+@result.poster_path, alt: @result.title %>
+		<% else %>
+			<h2>Image</h2>
+			<%= image_tag 'unknow.jpg', alt: "unknonw" %>
+		<% end %>
+
+	</div>	
+</div>
