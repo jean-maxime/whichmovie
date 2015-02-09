@@ -132,3 +132,121 @@ footer p{
 	color:white;
 	text-decoration:none;
 }
+
+#result_search_container{
+	text-align:center;
+}
+
+.result_search{
+	// background-color:#F0F0F0;
+	width:300px;
+	display:inline-block;
+	text-align:center;
+	margin: 5px;
+	color:#ecf0f1;
+	vertical-align:bottom;
+	// border: solid 1px #EBEBEB;
+}
+
+.result_search img{
+	display:block;
+	margin: 0 auto;
+}
+
+.choice{
+	width:100%;
+	height:30px;
+}
+
+.viewed, .wish{
+	width:50%;
+	height:30px;
+
+}
+
+.viewed{
+	background-color:#ecf0f1;
+	float:right;
+}
+
+.wish{
+	float:left;
+	background-color:#e74c3c;
+
+}
+
+#form_search{
+	// text-align:center;
+	// margin: 10px;
+	margin-bottom:60px;
+}
+
+#form_search input,
+#form_search select,
+#form_search textarea {
+	display: block;
+	font-size: inherit;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 20px;
+	margin: 0;
+	height: 60px;
+}
+
+#search {
+	width: 85%;
+	float:left;
+	text-align:center;
+	// font-size:26px;
+	background-color:#ecf0f1;
+	color:#34495e;
+	// text-transform:uppercase;
+	border:solid 1px #B7B7B7;
+}
+
+#submit{
+	display:block;
+	width:15%;
+	float:right;
+	height:60px;
+	text-align:center;
+	font-size:18px;
+	color:#34495e;
+	background-color:#ecf0f1 !important;
+	text-transform:uppercase;
+	border:none;
+	cursor:pointer;
+	border-left:solid thin #34495e;
+	-o-transition:all .2s ease-out;
+	-ms-transition:all .2s ease-out;
+	-moz-transition:all .2s ease-out;
+	-webkit-transition:all .2s ease-out;
+	/* ...and now override with proper CSS property */
+	transition:all .2s ease-out;
+	background-color:#2ecc71;
+}
+
+#submit:hover{
+	background-color:#34495e !important;
+	color: #ecf0f1;
+}
+
+
+
+::-webkit-input-placeholder { font-style:italic; 	text-transform:none; }
+::-moz-placeholder { font-style:italic; text-transform:none; } /* firefox 19+ */
+:-ms-input-placeholder { font-style:italic; text-transform:none; } /* ie */
+input:-moz-placeholder { font-style:italic; text-transform:none; }
+
+@media screen and (max-width: 720px) {
+  #submit{
+  margin:0;
+  padding:0;
+  	float:none;
+  	width:100%;
+  }
+
+  #search{
+  	width:100%;
+  }
+}
