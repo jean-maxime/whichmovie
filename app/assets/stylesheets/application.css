@@ -278,6 +278,18 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 		-ms-filter: blur(2px);
 	}
 
+	.description_film_note{
+		position:absolute;
+		top:5%;
+		right: 5%;
+		color:#fff !important;
+		z-index:10;
+	}
+
+	.description_film_actors{
+			color:#bdc3c7;
+	}
+
 	.description_film_infos{
 		padding:2%;
 		color:#fff;
@@ -289,7 +301,7 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 		height:100%;
 		background-color:#000;
 		position:absolute;
-		opacity:0.4;
+		opacity:0.5;
 		z-index:2;
 	}
 

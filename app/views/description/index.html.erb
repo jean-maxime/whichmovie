@@ -1,19 +1,42 @@
 <div id="description_film">
-	   <%= debug(@credits) %> 
+	   <!-- <%= debug(@result) %> -->
 	<div class="description_film_header">
 		<div class="overlay"></div>
 			<div class="description_film_img" style="background-image:url(https://image.tmdb.org/t/p/w185/<%= @result.poster_path %>)">
 			</div>
+			<div class="description_film_note">Note :
+				<%
+					note = Integer(@result.popularity)
+					note = note.round
+					case note
+					when 1
+						testNote = 1
+					when 2
+						testNote = 2
+					when 3
+						testNote = 3
+					when 4
+						testNote = 4
+					when 5
+						testNote = 5
+					else
+						testNote = "NC"
+					end
+				%>
+				<% while i != testNote do %>
+					<%= "1" %>
+				<% end %>
+		  </div>
 			<div class="description_film_intro">
 				<h1><%= @result.title %></h1>
-
-				<% @casts.each do |task| %>
+				 de directeur = <%= @credits.job %> (<%= @result.release_date[0,4] %>) -
+				<!-- <% @casts.each do |task| %>
 					<% if task.job =="Director" %>
 						<%= task.name %>
 					<% end %>
-				<% end %>
+				<% end %> -->
 
-
+				<span class="description_film_actors">
 					<% i = 0 %>
 					<% @casts.each do |task| %>
 						<% if i<2 %>
@@ -23,13 +46,29 @@
 						<% end %>
 						<% i+= 1 %>
 					<% end %>
-					(<%= @result.release_date[0,4] %>)
+				</span>
 			</span>
 		</div>
 	</div>
 	<div class="description_film_infos">
+		<p>Release date : <%= @result.name %></p>
+		<p>Type : <%= @result.name %></p>
+		<p>Duration :</p>
 		<p>Synopsis :</p>
 		<p><%= @result.overview %></p>
+		<p>Casting :
+			<% j = 0 %>
+			<% @casts.each do |task| %>
+				<% if j < 4 %>
+					<%= task.name %>,
+				<% elsif j == 5 %>
+					<%= task.name %>
+				<% end %>
+				<% j+= 1 %>
+			<% end %>
+			</p>
+		<p>Director(s) :</p>
+		<p>Budget : <%= @result.budget %> <span style="color:#f1c40f">$</span></p>
 	</div
 	<div class="video">
 		<% if @trailers.present? %>
