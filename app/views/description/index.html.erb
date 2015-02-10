@@ -1,13 +1,25 @@
 <div id="description_film">
+	 <!-- <%= debug(@casts) %>  -->
+	<div class="description_film_header">
+		<div class="overlay"></div>
+			<div class="description_film_img" style="background-image:url(https://image.tmdb.org/t/p/w185/<%= @result.poster_path %>)">
+			</div>
+			<div class="description_film_intro">
+				<h1><%= @result.title %></h1>
+					<% @casts.each do |task| %>
+						<%= task.name %>
+					<% end %>
+			</span>
+		</div>
+	</div>
 	<div class="video">
-		<h3><%= @result.title %></h3>
-		<p><%= @result.overview %></p>
 		<% if @trailers.present? %>
-		<h2>Trailer</h2>
-		<% @trailers.each do |task| %>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= task.source %>" frameborder="0" allowfullscreen></iframe>
-			<% break %>
-		<% end %>
+			<% @trailers.each do |task| %>
+				<div class="videoWrapper">
+					<iframe src="https://www.youtube.com/embed/<%= task.source %>" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<% break %>
+			<% end %>
 		<% elsif @result.poster_path.present? %>
 			<h2>Image</h2>
 			<%= image_tag "https://image.tmdb.org/t/p/w185/"+@result.poster_path, alt: @result.title %>
@@ -15,6 +27,8 @@
 			<h2>Image</h2>
 			<%= image_tag 'unknow.jpg', alt: "unknonw" %>
 		<% end %>
+		<p><%= @result.overview %></p>
 
-	</div>	
+
+	</div>
 </div>

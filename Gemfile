@@ -31,7 +31,8 @@ gem 'spring',        group: :development
 gem 'devise'
 #
 gem 'themoviedb'
-
+#
+gem 'jquery-ui-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
