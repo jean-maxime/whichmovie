@@ -1,9 +1,16 @@
 <div id="description_film">
-	<!-- <%= debug(@result) %> -->
+	 <!-- <%= debug(@casts) %>  -->
 	<div class="description_film_header">
-		<div class="description_film_img" style="background-image:url(https://image.tmdb.org/t/p/w185/<%= @result.poster_path %>)">
+		<div class="overlay"></div>
+			<div class="description_film_img" style="background-image:url(https://image.tmdb.org/t/p/w185/<%= @result.poster_path %>)">
+			</div>
+			<div class="description_film_intro">
+				<h1><%= @result.title %></h1>
+					<% @casts.each do |task| %>
+						<%= task.name %>
+					<% end %>
+			</span>
 		</div>
-		<h1><%= @result.title %></h1>
 	</div>
 	<div class="video">
 		<% if @trailers.present? %>

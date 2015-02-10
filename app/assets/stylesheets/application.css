@@ -255,13 +255,13 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 		height:300px;
 	}
 
-	.description_film_header h1{
+	.description_film_intro{
 		color:#fff;
 		position:absolute;
 		bottom:5%;
 		left:5%;
 		z-index:10;
-	}
+		}
 
 	.description_film_img{
 		width:100%;
@@ -277,6 +277,12 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 		-o-filter: blur(2px);
 		-ms-filter: blur(2px);
 	}
+
+	/*.overlay{
+		width:100%;
+		height:100%;
+		background-color:#000;
+	}*/
 
 	.videoWrapper{
 		position: relative;
