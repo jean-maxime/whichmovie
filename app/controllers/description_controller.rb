@@ -6,7 +6,7 @@ class DescriptionController < ApplicationController
 		trailers = Tmdb::Movie.trailers(id)
 		@trailers = trailers.youtube
     @casts = Tmdb::Movie.casts(id)
-    
+
 	end
   end
 end
