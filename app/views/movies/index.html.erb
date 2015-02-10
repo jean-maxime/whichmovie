@@ -20,5 +20,17 @@
 		<% end %>
 	</div>
 <% else %>
- <!-- afficher les fims populaires -->
+	<div id="result_search_container">
+		<%  @popular.each do |task| %>
+			<div class="result_search">
+				<p><%= task.title %><p>
+				<% if !task.poster_path.nil? %>
+					<%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title), {:action => 'index', :controller => 'description', :id => task.id}  %>
+				<% else %>
+					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'index', :controller => 'description', :id => task.id} %>
+				<% end %>
+				<div class="choice"><span class="wish">X</span><span class="viewed">S</span></div>
+			</div>
+		<% end %>
+	</div>
 <% end %>
