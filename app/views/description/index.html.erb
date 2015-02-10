@@ -1,23 +1,36 @@
 <div id="description_film">
-	 <!-- <%= debug(@casts) %>  -->
+	   <%= debug(@credits) %> 
 	<div class="description_film_header">
 		<div class="overlay"></div>
 			<div class="description_film_img" style="background-image:url(https://image.tmdb.org/t/p/w185/<%= @result.poster_path %>)">
 			</div>
 			<div class="description_film_intro">
 				<h1><%= @result.title %></h1>
+
+				<% @casts.each do |task| %>
+					<% if task.job =="Director" %>
+						<%= task.name %>
+					<% end %>
+				<% end %>
+
+
 					<% i = 0 %>
 					<% @casts.each do |task| %>
 						<% if i<2 %>
 							<%= task.name %>,
 						<% elsif i ==3 %>
-							<%= task.name %>.
+							<%= task.name %>
 						<% end %>
 						<% i+= 1 %>
 					<% end %>
+					(<%= @result.release_date[0,4] %>)
 			</span>
 		</div>
 	</div>
+	<div class="description_film_infos">
+		<p>Synopsis :</p>
+		<p><%= @result.overview %></p>
+	</div
 	<div class="video">
 		<% if @trailers.present? %>
 
@@ -37,7 +50,7 @@
 			<%= image_tag 'unknow.jpg', alt: "unknonw" %>
 
 		<% end %>
-		<p><%= @result.overview %></p>
+
 
 
 	</div>
