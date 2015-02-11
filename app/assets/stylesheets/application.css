@@ -17,6 +17,10 @@
 /*******************
 Header, Footer, Body
 *******************/
+input, textarea {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
 
 body{
 	margin: 0;
@@ -176,9 +180,7 @@ footer p{
 }
 
 #form_search{
-	// text-align:center;
-	// margin: 10px;
-	margin-bottom:60px;
+	text-align:center;
 }
 
 #form_search input,
@@ -231,6 +233,75 @@ footer p{
 	color: #ecf0f1;
 }
 
+.description_film_header {
+	position:relative;
+	height:300px;
+}
+
+.description_film_intro{
+	color:#fff;
+	position:absolute;
+	bottom:5%;
+	left:5%;
+	z-index:10;
+}
+
+.description_film_img{
+	width:100%;
+	height:300px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	filter: blur(2px);
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+}
+
+.description_film_note{
+	position:absolute;
+	top:5%;
+	right: 5%;
+	color:#fff !important;
+	z-index:10;
+}
+
+.description_film_actors{
+		color:#bdc3c7;
+}
+
+.description_film_infos{
+	padding:2%;
+	color:#fff;
+
+}
+
+.overlay{
+	width:100%;
+	height:100%;
+	background-color:#000;
+	position:absolute;
+	opacity:0.5;
+	z-index:2;
+}
+
+.videoWrapper{
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
 
 ::-webkit-input-placeholder { font-style:italic; 	text-transform:none; }
@@ -239,9 +310,25 @@ footer p{
 input:-moz-placeholder { font-style:italic; text-transform:none; }
 
 @media screen and (max-width: 720px) {
+
+	body{
+
+
+	}
+
+	.result_search{
+		width: 90%;
+	}
+
+	.result_search img{
+		display:block;
+		margin: 0 auto;
+		width:100% !important;
+	}
+
   #submit{
-  margin:0;
-  padding:0;
+  	margin:0;
+  	padding:0;
   	float:none;
   	width:100%;
   }
