@@ -10,6 +10,11 @@
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script>
+  $(function() {
+    $( "#result_search_container" ).tabs();
+  });
+  </script>
 
 </head>
 <body>
