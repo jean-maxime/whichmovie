@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'description/index'
+  get 'movie_properties/create'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
