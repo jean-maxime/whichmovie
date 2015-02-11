@@ -24,10 +24,10 @@
 		  </div>
 			<div class="description_film_intro">
 				<h1><%= @result.title %></h1>
-				de
+				By
 				<% @credits.crew.each do |task| %>
 					<% if task.job == "Director" %>
-					 			<%= task.name %>,
+					 			<%= task.name %>
 					<% end %>
 				<% end %>
 				(<%= @result.release_date[0,4] %>) -
@@ -45,16 +45,16 @@
 		</div>
 	</div>
 	<div class="description_film_infos">
-		<p>Release date : <%= @result.release_date %></p>
-		<p>Type :
+		<p><span class="title_infos">Release date</span> : <%= @result.release_date %></p>
+		<p><span class="title_infos">Type</span> :
 		<% @result.genres.each do |genre| %>
 		 <%= genre.name %>,
 		<% end %>
 		</p>
-		<p>Duration : <%= @result.runtime %> min</p>
-		<p>Synopsis :</p>
+		<p><span class="title_infos">Duration</span> : <%= @result.runtime %> min</p>
+		<p><span class="title_infos">Synopsis</span> :</p>
 		<p><%= @result.overview %></p>
-		<p>Casting :
+		<p><span class="title_infos">Casting</span> :
 			<% j = 0 %>
 			<% @casts.each do |task| %>
 				<% if j < 4 %>
@@ -65,13 +65,20 @@
 				<% j+= 1 %>
 			<% end %>
 			</p>
-		<p>Director(s) :
+		<p><span class="title_infos">Director(s)</span> :
 			<% @credits.crew.each do |task| %>
 				<% if task.job == "Director" %>
 							<%= task.name %>,
 				<% end %>
 			<% end %> </p>
-		<p>Budget : <span style="color:#f1c40f">$</span><%= @result.budget %> </p>
+			<% budget = @result.budget %>
+			<% if budget == 0 %>
+				<% budget = "NC" %>
+				<p><span class="title_infos">Budget</span> : <%= budget %> </p>
+			<% elsif %>
+				<p><span class="title_infos">Budget</span> : <span style="color:#f1c40f">$</span><%= budget %> </p>
+			<% end %>
+
 	</div>
 	<div class="video">
 
