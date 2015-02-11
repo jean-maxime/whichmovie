@@ -36,8 +36,8 @@
 					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'index', :controller => 'description', :id => task.id} %>
 				<% end %>
 				<div class="choice">
-					<span class="wish"><%= link_to 'VIEWED', {:controller => "movie_properties", :action => "create", :id_film => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
-					<span class="viewed"><%= link_to 'TO SEE', {:controller => "movie_properties", :action => "create", :id_film => task.id, :id_user => current_user.id, :state => 'to see'} %></span>
+					<span class="wish"><%= link_to 'VIEWED', {:controller => "movie_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
+					<span class="viewed"><%= link_to 'TO SEE', {:controller => "movie_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
 				</div>
 			</div>
 		<% end %>
