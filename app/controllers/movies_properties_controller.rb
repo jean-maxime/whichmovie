@@ -50,11 +50,11 @@ class MoviesPropertiesController < ApplicationController
 		end
 
 		#ADD to movie_properties
-		if(MoviesPropertie.where(:user_id => id_user).present? && MoviesPropertie.where(:movie_id => id_movie_list).present?)
-			liste = MoviesPropertie.find_by("user_id = ? AND movie_id = ? ", id_user, id_movie_list)
+		if(MoviesProperty.where(:user_id => id_user).present? && MoviesProperty.where(:movie_id => id_movie_list).present?)
+			liste = MoviesProperty.find_by("user_id = ? AND movie_id = ? ", id_user, id_movie_list)
 			liste.update_attributes(status: state)
 		else
-			MoviesPropertie.create(:user_id => id_user, :movie_id => id_movie_list, :status => state)
+			MoviesProperty.create(:user_id => id_user, :movie_id => id_movie_list, :status => state)
 		end
 
 		redirect_to root_url
