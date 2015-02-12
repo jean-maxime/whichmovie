@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150212083317) do
 
-  create_table "movie_properties", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "movie_id"
-    t.string   "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "movies", force: true do |t|
     t.string   "movie_name"
     t.text     "description"
@@ -29,6 +21,14 @@ ActiveRecord::Schema.define(version: 20150212083317) do
     t.datetime "updated_at"
     t.integer  "id_movie_api"
     t.string   "image_url"
+  end
+
+  create_table "movies_properties", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
