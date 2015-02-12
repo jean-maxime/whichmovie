@@ -11,9 +11,9 @@
 			<div class="result_search">
 				<p><%= task.title %><p>
 				<% if !task.poster_path.nil? %>
-					<%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title), {:action => 'index', :controller => 'description', :id => task.id}  %>
+					<%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title), {:action => 'show', :controller => 'movies', :id => task.id}  %>
 				<% else %>
-					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'index', :controller => 'description', :id => task.id} %>
+					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'show', :controller => 'movies', :id => task.id} %>
 				<% end %>
 				<div class="choice"><span class="wish">VIEW</span><span class="viewed">TO SEE</span></div>
 			</div>
@@ -31,13 +31,13 @@
 			<div class="result_search">
 				<p><%= task.title %><p>
 				<% if !task.poster_path.nil? %>
-					<%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title), {:action => 'index', :controller => 'description', :id => task.id}  %>
+					<%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title), {:action => 'show', :controller => 'movies', :id => task.id}  %>
 				<% else %>
-					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'index', :controller => 'description', :id => task.id} %>
+					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'show', :controller => 'movies', :id => task.id} %>
 				<% end %>
 				<div class="choice">
-					<span class="wish"><%= link_to 'VIEWED', {:controller => "movie_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
-					<span class="viewed"><%= link_to 'TO SEE', {:controller => "movie_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
+					<span class="wish"><%= link_to 'VIEWED', {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
+					<span class="viewed"><%= link_to 'TO SEE', {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
 				</div>
 			</div>
 		<% end %>
@@ -47,11 +47,14 @@
 			<div class="result_search">
 				<p><%= task.title %><p>
 				<% if !task.poster_path.nil? %>
-					<%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title), {:action => 'index', :controller => 'description', :id => task.id}  %>
+					<%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title), {:action => 'show', :controller => 'movies', :id => task.id}  %>
 				<% else %>
-					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'index', :controller => 'description', :id => task.id} %>
+					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'show', :controller => 'movies', :id => task.id} %>
 				<% end %>
-				<div class="choice"><span class="wish">VIEW</span><span class="viewed">TO SEE</span></div>
+				<div class="choice">
+					<span class="wish"><%= link_to 'VIEWED', {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
+					<span class="viewed"><%= link_to 'TO SEE', {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
+				</div>
 			</div>
 		<% end %>
 	  	</div>
@@ -60,11 +63,14 @@
 			<div class="result_search">
 				<p><%= task.title %><p>
 				<% if !task.poster_path.nil? %>
-					<%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title), {:action => 'index', :controller => 'description', :id => task.id}  %>
+					<%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.poster_path, alt: task.title), {:action => 'show', :controller => 'movies', :id => task.id}  %>
 				<% else %>
-					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'index', :controller => 'description', :id => task.id} %>
+					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'show', :controller => 'movies', :id => task.id} %>
 				<% end %>
-				<div class="choice"><span class="wish">VIEW</span><span class="viewed">TO SEE</span></div>
+				<div class="choice">
+					<span class="wish"><%= link_to 'VIEWED', {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
+					<span class="viewed"><%= link_to 'TO SEE', {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
+				</div>
 			</div>
 		<% end %>
 	  	</div>

@@ -1,4 +1,4 @@
 class Movie < ActiveRecord::Base
-  has_many :movie_properties
-  has_many :users, :through => :movie_properties
+  has_many :movies_properties
+  has_many :users, :through => :movies_properties
 end

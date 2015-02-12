@@ -1,4 +1,15 @@
 class MoviesController < ApplicationController
+	
+	def show
+		if params[:id].present?
+			id = params[:id]
+			@result = Tmdb::Movie.detail(id)
+			trailers = Tmdb::Movie.trailers(id)
+			@trailers = trailers.youtube
+			@casts = Tmdb::Movie.casts(id)
+			@credits = Tmdb::Movie.credits(id)
+		end
+	end
 
 	def index
 		@popular = Tmdb::Movie.popular
