@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :movie_properties
-  has_many :movies, :through => :movie_properties
+  has_many :movies_properties
+  has_many :movies, :through => :movies_properties
 end

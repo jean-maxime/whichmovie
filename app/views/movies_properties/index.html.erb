@@ -1,0 +1,18 @@
+<p>hello ez </p>
+
+<% @movies.each do |task| %>
+
+<div class="choice">
+  <span class="wish"><%= link_to 'VIEWED', {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
+  <span class="viewed"><%= link_to 'TO SEE', {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
+</div>
+  <%= link_to image_tag("https://image.tmdb.org/t/p/w185/"+task.image_url, alt: task.movie_name), {:action => 'show', :controller => 'movies', :id => task.id_movie_api}  %>
+
+  <%= task.movie_name %>
+  <p>Synopsis : <%= task.description %> </p>
+
+  <div class="videoWrapper">
+    <iframe src="https://www.youtube.com/embed/<%= task.trailer %>" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+<% end %>
