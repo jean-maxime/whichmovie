@@ -1,0 +1,6 @@
+<p>hello </p>
+
+<!-- <%= @movies %> -->
+<% @movies.each do |movie| %>
+  <%= movie[1]['movie_name'] %>
+<% end %>
