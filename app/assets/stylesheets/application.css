@@ -67,8 +67,8 @@ header .navbar-link:hover{
 	opacity: 0.7;
 }
 
-header img{
-	width:5%;
+header .logo img{
+	width:80px;
 }
 
 #title{
@@ -108,7 +108,7 @@ footer p{
 }
 
 .form_devise .field{
-	height: 10vh;
+	height: 70px;
 }
 
 .form_devise a{
@@ -126,14 +126,6 @@ footer p{
 	text-align: center;
 	color:#393f49;
 	font-size: 14px;
-}
-
-.form_devise #user_remember_me{
-	margin-left: 48%;
-}
-
-#container{
-	/*min-height: 79vh;*/
 }
 
 #title h1 a{
@@ -172,15 +164,22 @@ footer p{
 	height:5px;
 	margin-top:-5px;
 	background-color:#2ecc71;
-	-webkit-transition: all 0.5s ease;
-		-moz-transition: all 0.5s ease;
-			-ms-transition: all 0.5s ease;
-			-o-transition: all 0.5s ease;
-					transition: all 0.5s ease;
+	-webkit-transition: all 3s;
+    -moz-transition: all 3s;
+    -o-transition: all 3s;
+    transition: all 3s;
 }
 
 #result_search_container ul li:hover:after{
+	display:block;
+	content: "";
+	height:5px;
+	margin-top:-5px;
 	background-color:#2ecc71;
+	-webkit-transition: all 3s;
+    -moz-transition: all 3s;
+    -o-transition: all 3s;
+    transition: all 3s;
 }
 
 .result_search{
