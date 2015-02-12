@@ -357,7 +357,6 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 
 	body{
 
-
 	}
 
 	.result_search{
@@ -449,6 +448,11 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 		left: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	/*************LIST ******/
+	.user_list_item{
+		width:100%;
 	}
 
 }
