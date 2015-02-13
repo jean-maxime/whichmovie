@@ -514,5 +514,47 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 		height: 100%;
 	}
 
+	/**** LIST ****/
+
+	.user_list_item{
+		position:relative;
+	}
+
+	.user_list_item .image_item{
+		display:inline-block;
+	}
+	.user_list_item .choice{
+		position: absolute;
+		width:50%;
+		top:5%;
+		right:0;
+	}
+
+	.user_list_item .choice .viewed,
+	.user_list_item .choice .wish{
+		float:none;
+	}
+
+
+	.user_list_item .description_visible{
+		width: 70%;
+		padding-left: 5%;
+		display:block;
+	}
+
+	.image_item{
+		max-height:200px
+	}
+
+	.user_list_item .videoWrapper{
+		display: none;
+	}
+
+	.user_list_item .see_more{
+		height:20px;
+		width:100%;
+		background-color:#27ae60;
+		cursor:pointer;
+	}
 
 }
