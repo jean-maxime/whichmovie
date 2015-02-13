@@ -40,7 +40,7 @@ class MoviesPropertiesController < ApplicationController
 			MoviesProperty.create(:user_id => id_user, :movie_id => id_movie_list, :status => state)
 		end
 
-		redirect_to root_url
+		redirect_to :back
 	end
 
 end

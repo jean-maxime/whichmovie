@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
 
 	def index
+		@movies = current_user.movies
 		@populars = Tmdb::Movie.popular
 		@upcomings = Tmdb::Movie.upcoming
 		@nows = Tmdb::Movie.now_playing
