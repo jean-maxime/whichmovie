@@ -1,5 +1,4 @@
 <div id="description_film">
-	   <% p(@result) %>
 	<div class="description_film_header">
 		<div class="overlay"></div>
 			<div class="description_film_img" style="background-image:url(https://image.tmdb.org/t/p/w185/<%= @result.poster_path %>)">
@@ -21,13 +20,13 @@
 					<% j += 1 %>
 				<% end %>
 				(<%= @result.vote_count %> votes)
-		  </div>
+			</div>
 			<div class="description_film_intro">
 				<h1><%= @result.title %></h1>
 				By
 				<% @credit.crew.each do |task| %>
 					<% if task.job == "Director" %>
-					 			<%= task.name %>
+								<%= task.name %>
 					<% end %>
 				<% end %>
 				(<%= @result.release_date[0,4] %>) -
@@ -45,10 +44,14 @@
 		</div>
 	</div>
 	<div class="description_film_infos">
+		<div class="choice">
+			<span class="wish"><%= link_to image_tag('viewed.png', :title => 'viewed'), {:controller => "movies_properties", :action => "create", :id_movie => @result.id, :id_user => current_user.id, :state => 'viewed'} %></span>
+			<span class="viewed"><%= link_to image_tag('to_see.png', :title => 'to see'), {:controller => "movies_properties", :action => "create", :id_movie => @result.id, :id_user => current_user.id, :state => 'to_see'} %></span>
+		</div>
 		<p><span class="title_infos">Release date</span> : <%= @result.release_date %></p>
 		<p><span class="title_infos">Type</span> :
 		<% @result.genres.each do |genre| %>
-		 <%= genre.name %>,
+		<%= genre.name %>,
 		<% end %>
 		</p>
 		<p><span class="title_infos">Duration</span> : <%= @result.runtime %> min</p>

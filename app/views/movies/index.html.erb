@@ -4,10 +4,9 @@
 --><%= submit_tag("Search", :id => "submit") %></div><!--
 --><% end %>
 </div>
-<%= debug(@test) %>
 <% if params[:search].present? %>
 	<div id="result_search_container">
-		<%  @result.each do |task| %>
+		<%  @results.each do |task| %>
 			<div class="result_search">
 				<p><%= task.title %><p>
 				<% if !task.poster_path.nil? %>
@@ -15,7 +14,10 @@
 				<% else %>
 					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'show', :controller => 'movies', :id => task.id} %>
 				<% end %>
-				<div class="choice"><span class="wish">VIEW</span><span class="viewed">TO SEE</span></div>
+				<div class="choice">
+					<span class="wish"><%= link_to image_tag('viewed.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
+					<span class="viewed"><%= link_to image_tag('to_see.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
+				</div>
 			</div>
 		<% end %>
 	</div>
@@ -23,7 +25,7 @@
 	<div id="result_search_container">
 		<ul>
 		    <li><a href="#tabs-1">Popular</a></li>
-		    <li><a href="#tabs-2">This week</a></li>
+		    <li><a href="#tabs-2">Currently</a></li>
 		    <li><a href="#tabs-3">Coming</a></li>
 	    </ul>
 	  	<div id="tabs-1">

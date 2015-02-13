@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'movies/show'
   get 'movies_properties/create'
   get 'movies_properties/index'
-
+  get 'movies_properties/destroy'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
