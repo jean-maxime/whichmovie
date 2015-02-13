@@ -1,24 +1,7 @@
 class MoviesPropertiesController < ApplicationController
 
 	def index
-		id_user = current_user.id
-
-		# on sélectionne tous les id des films dans MoviePropertie qui sont stocker dans Movie
-
 		 @movies = current_user.movies
-
-		#
-		# row_properties.attributes.movie_id.each do |movie|
-		# 	@movie_hash[cpt] = Movie.where(:id => movie)
-		# 	cpt += 1
-		# end
-
-
-
-		# @movie_title = movie_properties
-		# @movie_description = movie_properties.overview
-		# @movie_img = movie_properties.poster_path
-		# @movie_trailer = movie_properties
 	end
 
 	def create
