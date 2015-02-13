@@ -32,6 +32,8 @@ gem 'devise'
 #
 gem 'themoviedb'
 #
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+#
 gem 'jquery-ui-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

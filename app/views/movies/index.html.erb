@@ -27,7 +27,7 @@
 		    <li><a href="#tabs-3">Coming</a></li>
 	    </ul>
 	  	<div id="tabs-1">
-		    <%  @popular.each do |task| %>
+		    <%  @populars.each do |task| %>
 			<div class="result_search">
 				<p><%= task.title %><p>
 				<% if !task.poster_path.nil? %>
@@ -43,7 +43,7 @@
 		<% end %>
 	  	</div>
 	  	<div id="tabs-2">
-		    <%  @now.each do |task| %>
+		    <%  @nows.each do |task| %>
 			<div class="result_search">
 				<p><%= task.title %><p>
 				<% if !task.poster_path.nil? %>
@@ -59,7 +59,7 @@
 		<% end %>
 	  	</div>
 	  	<div id="tabs-3">
-		    <%  @upcoming.each do |task| %>
+		    <%  @upcomings.each do |task| %>
 			<div class="result_search">
 				<p><%= task.title %><p>
 				<% if !task.poster_path.nil? %>

@@ -25,7 +25,7 @@
 			<div class="description_film_intro">
 				<h1><%= @result.title %></h1>
 				By
-				<% @credits.crew.each do |task| %>
+				<% @credit.crew.each do |task| %>
 					<% if task.job == "Director" %>
 					 			<%= task.name %>
 					<% end %>
@@ -33,7 +33,7 @@
 				(<%= @result.release_date[0,4] %>) -
 				<span class="description_film_actors">
 					<% i = 0 %>
-					<% @casts.each do |task| %>
+					<% @cast.each do |task| %>
 						<% if i<2 %>
 							<%= task.name %>,
 						<% elsif i ==3 %>
@@ -56,7 +56,7 @@
 		<p><%= @result.overview %></p>
 		<p><span class="title_infos">Casting</span> :
 			<% j = 0 %>
-			<% @casts.each do |task| %>
+			<% @cast.each do |task| %>
 				<% if j < 4 %>
 					<%= task.name %>,
 				<% elsif j == 5 %>
@@ -66,7 +66,7 @@
 			<% end %>
 			</p>
 		<p><span class="title_infos">Director(s)</span> :
-			<% @credits.crew.each do |task| %>
+			<% @credit.crew.each do |task| %>
 				<% if task.job == "Director" %>
 							<%= task.name %>,
 				<% end %>
@@ -82,9 +82,9 @@
 	</div>
 	<div class="video">
 
-		<% if @trailers.present? %>
+		<% if @trailer.present? %>
 
-			<% @trailers.each do |task| %>
+			<% @trailer.each do |task| %>
 				<div class="videoWrapper">
 					<iframe src="https://www.youtube.com/embed/<%= task.source %>" frameborder="0" allowfullscreen></iframe>
 				</div>
