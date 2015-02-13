@@ -15,3 +15,9 @@
 //= require jquery_ujs
 //= require_tree .
 //= jquery.sidr.min.js
+
+$(document).ready(function(){
+  $('.see_more').click(function(){
+    $(this).parent().find('.videoWrapper').slideToggle();
+  });
+});
