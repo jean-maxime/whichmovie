@@ -6,8 +6,9 @@
           <h2><%= task.movie_name %></h2>
           <p>Synopsis : <%= task.description %> </p>
           <div class="choice">
-            <div class="wish"><%= link_to 'VIEWED', {:controller => "movies_properties", :action => "create", :id_movie => task.id_movie_api, :id_user => current_user.id, :state => 'viewed'} %></div>
-            <div class="viewed"><%= link_to 'TO SEE', {:controller => "movies_properties", :action => "create", :id_movie => task.id_movie_api, :id_user => current_user.id, :state => 'to_see'} %></div>
+            <div class="wish"><%= link_to image_tag('viewed.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id_movie_api, :id_user => current_user.id, :state => 'viewed'} %></div>
+            <div class="viewed"><%= link_to image_tag('to_see.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id_movie_api, :id_user => current_user.id, :state => 'to_see'} %></div>
+            <div class="trash"><%= link_to image_tag('trash.png'), {:controller => "movies_properties", :action => "destroy", :id_movie => task.id, :id_user => current_user.id} %></div>
           </div>
         </div>
         <div class="videoWrapper">

@@ -72,7 +72,7 @@ header .logo img{
 	width:80px;
 }
 
-header .round-image-50 {
+header .round-image-50{
 	background-color: white;
 	border: 1px solid #d9d9d9;
 	border-radius: 25px;
@@ -82,7 +82,27 @@ header .round-image-50 {
 	width: 50px;
 	overflow: hidden;
 	text-align: center;
+	margin-top:4px;
 	img { width: 100% }
+	-webkit-transition: all 200ms ease-in;
+		-webkit-transform: scale(1.0);
+		-ms-transition: all 200ms ease-in;
+		-ms-transform: scale(1.0);
+		-moz-transition: all 200ms ease-in;
+		-moz-transform: scale(1.0);
+		transition: all 200ms ease-in;
+		transform: scale(1.0);
+}
+
+header .round-image-50:hover{
+	-webkit-transition: all 200ms ease-in;
+		-webkit-transform: scale(1.2);
+		-ms-transition: all 200ms ease-in;
+		-ms-transform: scale(1.2);
+		-moz-transition: all 200ms ease-in;
+		-moz-transform: scale(1.2);
+		transition: all 200ms ease-in;
+		transform: scale(1.2);
 }
 
 #title{
@@ -217,25 +237,36 @@ footer p{
 
 .choice{
 	width:100%;
+	margin:0 auto;
 	height:30px;
+	margin:2% 0;
+}
+
+.viewed, .wish, .trash{
+	width: 15%;
+		height:30px;
+	display:inline-block;
 }
 
 .viewed, .wish{
-	width:50%;
-	height:30px;
-
+	vertical-align:middle;
 }
 
+.viewed img,
+.wish img{
+	width:40px;
+}
+.trash img{
+	width:30px
+}
+/*
 .viewed{
-	background-color:#ecf0f1;
 	float:right;
 }
 
 .wish{
 	float:left;
-	background-color:#e74c3c;
-
-}
+}*/
 
 #form_search{
 	text-align:center;
@@ -321,8 +352,8 @@ footer p{
 
 .description_film_note{
 	position:absolute;
-	top:5%;
-	right: 5%;
+	top: 8%;
+	right: 3%;
 	color:#fff !important;
 	z-index:10;
 }
@@ -404,11 +435,23 @@ footer p{
 }
 
 .user_list_item .see_more{
-	height:20px;
+	height:40px;
 	width:100%;
-	background-color:#27ae60;
+	background-image:url('/assets/more.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: #27ae60;
+	background-size: 40px;
 	cursor:pointer;
+	padding: 5px 0px;
 }
+
+/*.user_list_item .see_more img{
+	display:block;
+	margin:0 auto;
+	width: 40px;
+}*/
+
 
 
 
@@ -474,8 +517,8 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 
 	.description_film_note{
 		position:absolute;
-		top:5%;
-		right: 5%;
+		top: 10%;
+		right: 3%;
 		color:#fff !important;
 		z-index:10;
 	}
@@ -523,6 +566,7 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 	.user_list_item .image_item{
 		display:inline-block;
 	}
+
 	.user_list_item .choice{
 		position: absolute;
 		width:50%;
@@ -537,8 +581,9 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 
 
 	.user_list_item .description_visible{
-		width: 70%;
+		width: 90%;
 		padding-left: 5%;
+		padding-right:5%;
 		display:block;
 	}
 
@@ -551,10 +596,35 @@ input:-moz-placeholder { font-style:italic; text-transform:none; }
 	}
 
 	.user_list_item .see_more{
-		height:20px;
-		width:100%;
-		background-color:#27ae60;
-		cursor:pointer;
+		padding:10px 0px;
+	}
+
+	.user_list_item .viewed,
+	.user_list_item .wish,
+	.user_list_item .trash{
+		display:block;
+		margin-bottom:20px;
+	}
+
+	.viewed, .wish, .trash{
+		margin-bottom:20px;
+		width:30%;
+		height:auto;
+	}
+
+	span.viewed{
+		margin: 0px 20px
+	}
+	span.wish{
+		margin: 0px 20px
+	}
+
+	.viewed img,
+	.wish img{
+		width:80px;
+	}
+	.trash img{
+		width:60px
 	}
 
 }

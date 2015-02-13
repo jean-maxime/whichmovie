@@ -18,6 +18,13 @@
 
 $(document).ready(function(){
   $('.see_more').click(function(){
+    $(this).toggleClass('open');
+    if( $(this).hasClass('open') ){
+      $(this).css("background-image", "url(/assets/less.png)")
+    }else{
+      $(this).css("background-image", "url(/assets/more.png)")
+    }
     $(this).parent().find('.videoWrapper').slideToggle();
+
   });
 });

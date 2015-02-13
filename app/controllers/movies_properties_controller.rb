@@ -4,6 +4,11 @@ class MoviesPropertiesController < ApplicationController
 		 @movies = current_user.movies
 	end
 
+	def destroy
+		MoviesProperty.find_by("user_id = ? AND movie_id = ? ", params[:id_user], params[:id_movie]).destroy
+		redirect_to :back
+	end
+
 	def create
 		id_user = params[:id_user]
 		id_movie = params[:id_movie]
@@ -40,7 +45,7 @@ class MoviesPropertiesController < ApplicationController
 			MoviesProperty.create(:user_id => id_user, :movie_id => id_movie_list, :status => state)
 		end
 
-		redirect_to :back
+		redirect_to controller: "movies", action: "show", id: id_movie
 	end
 
 end
