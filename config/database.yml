@@ -39,8 +39,6 @@ test:
   host: localhost
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   database: hetic_production
-  username: root
-  password:
-  host: localhost
+  port: 5432
