@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
 			@trailer = trailer.youtube
 			@cast = Tmdb::Movie.casts(id)
 			@credit = Tmdb::Movie.credits(id)
+			@status = current_user.status(current_user.id, id)
 		end
 	end
 
