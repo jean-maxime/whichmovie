@@ -15,8 +15,20 @@
 					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'show', :controller => 'movies', :id => task.id} %>
 				<% end %>
 				<div class="choice">
-					<span class="wish"><%= link_to image_tag('viewed.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
-					<span class="viewed"><%= link_to image_tag('to_see.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
+					<span class="wish">
+						<% if(current_user.status(current_user.id, task.id)[0] == 'viewed')%>
+							<%= image_tag('viewed_gray.png', {:title => 'Viewed'}) %>
+						<% else %>
+							<%= link_to image_tag('viewed.png', {:title => 'Viewed'}), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %>
+						<% end %>
+					</span>
+					<span class="viewed">
+					<% if(current_user.status(current_user.id, task.id)[0] == 'to_see')%>
+							<%= image_tag('to_see_gray.png', {:title => 'To see'}) %>
+						<% else %>
+							<%= link_to image_tag('to_see.png', {:title => 'To see'}), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %>
+						<% end %>
+					</span>
 				</div>
 			</div>
 		<% end %>
@@ -38,8 +50,20 @@
 					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'show', :controller => 'movies', :id => task.id} %>
 				<% end %>
 				<div class="choice">
-					<span class="wish"><%= link_to image_tag('viewed.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
-					<span class="viewed"><%= link_to image_tag('to_see.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
+					<span class="wish">
+						<% if(current_user.status(current_user.id, task.id)[0] == 'viewed')%>
+							<%= image_tag('viewed_gray.png', {:title => 'Viewed'}) %>
+						<% else %>
+							<%= link_to image_tag('viewed.png', {:title => 'Viewed'}), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %>
+						<% end %>
+					</span>
+					<span class="viewed">
+					<% if(current_user.status(current_user.id, task.id)[0] == 'to_see')%>
+							<%= image_tag('to_see_gray.png', {:title => 'To see'}) %>
+						<% else %>
+							<%= link_to image_tag('to_see.png', {:title => 'To see'}), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %>
+						<% end %>
+					</span>
 				</div>
 			</div>
 		<% end %>
@@ -54,8 +78,20 @@
 					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'show', :controller => 'movies', :id => task.id} %>
 				<% end %>
 				<div class="choice">
-					<span class="wish"><%= link_to image_tag('viewed.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
-					<span class="viewed"><%= link_to image_tag('to_see.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
+					<span class="wish">
+						<% if(current_user.status(current_user.id, task.id)[0] == 'viewed')%>
+							<%= image_tag('viewed_gray.png', {:title => 'Viewed'}) %>
+						<% else %>
+							<%= link_to image_tag('viewed.png', {:title => 'Viewed'}), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %>
+						<% end %>
+					</span>
+					<span class="viewed">
+					<% if(current_user.status(current_user.id, task.id)[0] == 'to_see')%>
+							<%= image_tag('to_see_gray.png', {:title => 'To see'}) %>
+						<% else %>
+							<%= link_to image_tag('to_see.png', {:title => 'To see'}), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %>
+						<% end %>
+					</span>
 				</div>
 			</div>
 		<% end %>
@@ -70,8 +106,20 @@
 					<%= link_to image_tag('unknow.jpg', alt: "unknonw"), {:action => 'show', :controller => 'movies', :id => task.id} %>
 				<% end %>
 				<div class="choice">
-					<span class="wish"><%= link_to image_tag('viewed.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %></span>
-					<span class="viewed"><%= link_to image_tag('to_see.png'), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %></span>
+					<span class="wish">
+						<% if(current_user.status(current_user.id, task.id)[0] == 'viewed')%>
+							<%= image_tag('viewed_gray.png', {:title => 'Viewed'}) %>
+						<% else %>
+							<%= link_to image_tag('viewed.png', {:title => 'Viewed'}), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'viewed'} %>
+						<% end %>
+					</span>
+					<span class="viewed">
+					<% if(current_user.status(current_user.id, task.id)[0] == 'to_see')%>
+							<%= image_tag('to_see_gray.png', {:title => 'To see'}) %>
+						<% else %>
+							<%= link_to image_tag('to_see.png', {:title => 'To see'}), {:controller => "movies_properties", :action => "create", :id_movie => task.id, :id_user => current_user.id, :state => 'to_see'} %>
+						<% end %>
+					</span>
 				</div>
 			</div>
 		<% end %>
